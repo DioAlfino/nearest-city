@@ -78,7 +78,7 @@ public class CityService {
         for (City city : cities) {
             if (city.getName().toLowerCase().contains(lowerQuery)) {
                 City suguestion = new City();
-                suguestion.setName(city.getFullName());
+                suguestion.setName(city.getName());
                 suguestion.setLatitude(city.getLatitude());
                 suguestion.setLongitude(city.getLongitude());
 
@@ -150,5 +150,9 @@ public class CityService {
         double c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
 
         return radius * c;
+    }
+
+    public void setCities(List<City> cities) {
+        this.cities = cities;
     }
 }
